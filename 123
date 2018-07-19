@@ -1,0 +1,11 @@
+touch /tmp/script.sh /tmp/output.txt 
+echo -e '#!/bin/bash\n date\n echo "it works!"' > /tmp/script.sh
+chmod +x script.sh 
+crontab -e
+
+    * /tmp/script.sh >> /tmp/output.txt
+ESC 
+ : x
+ tail -f /tmp/output.txt 
+## alias gac='git add -A . && git commit -m' $1
+## alias gpom='git push origin master'
